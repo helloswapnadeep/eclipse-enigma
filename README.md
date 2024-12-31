@@ -1,4 +1,4 @@
-Here’s a tailored `README.md` for a weather web app built solely using HTML, CSS, and JavaScript:
+Here’s a tailored `README.md` for a interstellar web app built solely using HTML, CSS, and JavaScript:
 
 ```markdown
 # A Journey Beyond the Eclipse 🚀
