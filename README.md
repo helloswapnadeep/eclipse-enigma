@@ -51,7 +51,7 @@ Eclipse Enigma/
 
 - **HTML5**: Markup for the structure of the app.
 - **CSS3**: Styling and responsive design.
-- **JavaScript (ES6)**: interactivity.
+- **JavaScript (ES6)**: Enhance slider interactivity with intuitive controls for seamless navigation, smooth transitions, and effortless content exploration.
 
 ---
 
