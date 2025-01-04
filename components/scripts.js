@@ -22,3 +22,31 @@ const enigma =
 console.log(enigma);
 
 // ! HIDDEN MESSAGE END
+// ! MOUSE POINTER START
+
+const cursor = document.querySelector(".fa-galactic-senate");
+const toggleButton = document.querySelector(".fa-computer-mouse");
+let customCursorEnabled = false;
+
+document.addEventListener("mousemove", (e) => {
+  if (customCursorEnabled) {
+    const x = e.clientX;
+    const y = e.clientY;
+    cursor.style.transform = `translate(${x}px, ${y}px)`;
+  }
+});
+
+toggleButton.addEventListener("click", () => {
+  customCursorEnabled = !customCursorEnabled;
+
+  if (customCursorEnabled) {
+    cursor.style.display = "block";
+    document.body.style.cursor = "none";
+    
+  } else {
+    cursor.style.display = "none";
+    document.body.style.cursor = "default";
+  }
+});
+
+// ! MOUSE POINTER END

@@ -21,10 +21,10 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Iosevka", monospace;
+  font-family: "JetBrains", monospace;
   font-weight: normal;
   font-size: 16px;
-  color: rgba(242, 242, 242, 0.4);
+  color: rgba(242, 242, 242, 0.8);
 }
 
 body {
@@ -33,6 +33,7 @@ body {
     rgba(138, 43, 226, 1),
     rgba(255, 0, 127, 1)
   );
+  overflow: hidden;
 }
 
 /* ! PRE LOADER START */
@@ -122,7 +123,22 @@ body {
 }
 
 /* ! PRE LOADER END */
+/* ! MOUSE POINTER START */
+
+.fa-galactic-senate {
+  position: fixed;
+  pointer-events: none;
+  font-size: 24px;
+  color: rgb(255, 105, 180); /* Bubblegum Pink */
+  transform: translate(-50%, -50%);
+  display: none; /* Initially hidden */
+  will-change: transform;
+  z-index: 4;
+}
+
+/* ! MOUSE POINTER END */
 /* ! HEADER START */
+
 header {
   width: auto;
   height: 70px;
@@ -132,7 +148,8 @@ header {
   align-items: center;
   padding: 0% 5%;
   position: relative;
-  z-index: 69;
+  z-index: 3;
+  background-image: linear-gradient(to bottom, rgba(32, 38, 46, 1), transparent);
 }
 
 .logo > a {
@@ -140,6 +157,11 @@ header {
   font-family: "Abril Fatface", serif;
   font-size: 24px;
   color: rgba(246, 246, 246, 1);
+}
+
+.logo > a:hover {
+  text-decoration: double underline;
+  text-decoration-thickness: 3px;
 }
 
 ul > li > a {
@@ -150,10 +172,33 @@ ul > li > a {
   color: rgba(246, 246, 246, 1);
 }
 
+.github {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.fa-computer-mouse {
+  font-size: 16px;
+  padding-top: 3px;
+  color: rgba(246, 246, 246, 1);
+}
+
+.fa-computer-mouse:hover {
+  color: rgba(255, 111, 0, 1);
+  transition: 0.2s;
+}
+
 .fa-github-alt {
   font-size: 20px;
   padding-top: 5px;
   color: rgba(246, 246, 246, 1);
+}
+
+.fa-github-alt:hover {
+  color: rgba(255, 111, 0, 1);
+  transition: 0.2s;
 }
 
 /* ! HEADER END */
@@ -169,6 +214,13 @@ ul > li > a {
   position: absolute;
   inset: 0 0 0 0;
   overflow: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.slider .list .item.active {
+  opacity: 1;
+  z-index: 2;
 }
 
 .slider .list .item img {
@@ -184,16 +236,102 @@ ul > li > a {
   position: absolute;
   left: 0;
   bottom: 0;
-  background-image: linear-gradient(
-    to top,
-    rgba(32, 38, 46, 1), transparent
-  );
+  background-image: linear-gradient(to top, rgba(32, 38, 46, 1), transparent);
 }
 
 .slider .list .item .content {
   position: absolute;
   left: 5%;
-  bottom: 20%;
+  bottom: 10%;
   width: 90%;
   z-index: 1;
 }
+
+.slider .list .item .content p:nth-child(1) {
+  font-family: "Abril Fatface", serif;
+  color: rgba(246, 246, 246, 1);
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  padding-bottom: 50px;
+}
+
+.slider .list .item .content p:nth-child(1)::first-letter {
+  font-size: 30px;
+  text-decoration: underline;
+}
+
+.slider .list .item .content h2 {
+  font-family: "Great Vibes", serif;
+  color: rgba(255, 111, 0, 1);
+  font-size: 80px;
+  line-height: 0.8;
+  margin: 0;
+  text-decoration: underline;
+  text-decoration-thickness: 4px;
+}
+
+.slider .list .item .content h2::first-letter {
+  font-size: 90px;
+}
+
+.slider .list .item .content p:nth-child(3) {
+  font-family: "Iosevka", monospace;
+  line-height: 1.6;
+}
+
+.slider .list .item.active p:nth-child(1),
+.slider .list .item.active h2,
+.slider .list .item.active p:nth-child(3) {
+  transform: translateY(30px);
+  filter: blur(20px);
+  opacity: 0;
+  animation: showContent 0.5s 0.7s ease-in-out forwards;
+}
+
+.slider .list .item.active h2 {
+  animation-delay: 1s;
+}
+
+.slider .list .item.active p:nth-child(3) {
+  animation-delay: 1.4s;
+}
+
+@keyframes showContent {
+  to {
+    transform: translateY(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.arrows {
+  position: absolute;
+  background-color: rgba(32, 38, 46, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 3px 15px;
+  border-radius: 3px;
+  border: solid 3px rgba(246, 246, 246, 0.6);
+  top: 30%;
+  right: 50px;
+  z-index: 2;
+}
+
+.arrows button {
+  background-color: transparent;
+  border: none;
+  width: auto;
+  height: auto;
+  font-size: x-large;
+}
+
+.arrows button i {
+  font-size: 60px;
+  color: rgba(246, 246, 246, 1);
+  transition: 0.5s;
+}
+
+.arrows button i:hover {
+  color: rgba(138, 43, 226, 1);
+}
+
+/* ! SLIDER END */
