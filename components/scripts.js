@@ -42,7 +42,6 @@ toggleButton.addEventListener("click", () => {
   if (customCursorEnabled) {
     cursor.style.display = "block";
     document.body.style.cursor = "none";
-    
   } else {
     cursor.style.display = "none";
     document.body.style.cursor = "default";
