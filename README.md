@@ -129,7 +129,7 @@ Contributions are welcome! If you have suggestions or want to improve the app, f
 ## 📧 Contact
 
 For inquiries or support, contact:
-- **Email**: [swapnadeep@mypersona.cyou](mailto:swapnadeep@mypersona.cyou)
+- **Email**: [helloswapnadeep@outlook.com](mailto:helloswapnadeep@outlook.com)
 - **GitHub**: [helloswapnadeep](https://github.com/helloswapnadeep)
 
 ---
